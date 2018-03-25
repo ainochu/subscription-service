@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import com.aandres.subscriptionservice.common.constant.Constant;
@@ -16,6 +17,7 @@ public class RegisterDTO {
 	@NotNull
 	@NotEmpty
 	@ApiModelProperty(notes = "User email", required = true)
+	@Email
 	private String email;
 	@ApiModelProperty(notes = "User first name", required = false)
 	private String firstName;
@@ -26,11 +28,11 @@ public class RegisterDTO {
 	@ApiModelProperty(notes = "User birthday", required =true)
 	private Date dateOfBirth;
 	@NotNull
-	@ApiModelProperty(notes = "Consent user", required =true)
+	@ApiModelProperty(notes = "Consent user", required = true)
 	private boolean agree;
 	@NotNull
-	@ApiModelProperty(notes = "Id campaign", required =true)
-	private long campaignId;
+	@ApiModelProperty(notes = "Id campaign", required = true)
+	private Long campaignId;
 	
 	public String getEmail() {
 		return email;

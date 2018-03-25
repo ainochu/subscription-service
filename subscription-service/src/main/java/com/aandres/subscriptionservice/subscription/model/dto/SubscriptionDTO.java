@@ -21,6 +21,7 @@ public class SubscriptionDTO {
 	@NotNull
 	private Date dateOfBirth;
 	private boolean agree;
+	@NotNull
 	private Long campaignId;
 	
 	public Long getNewsletterId() {
