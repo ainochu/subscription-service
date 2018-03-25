@@ -6,8 +6,18 @@ services:
     - "8080:8080"
     links:
     - subscription-database
-    depends_on:
-    - subscription-database
+    - event-service
+    - email-service
+    # depends_on:
+    # - subscription-database
+  event-service:
+    build: ./event-service
+    ports:
+    - "8081:8080"
+  email-service:
+    build: ./email-service
+    ports:
+    - "8082:8080"
   subscription-database:
     build: ./subscription-database
     ports:

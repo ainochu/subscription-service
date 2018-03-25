@@ -1,8 +1,3 @@
-CREATE DATABASE subscription_db;
-
-GRANT ALL PRIVILEGES ON subscription_db.* TO 'adidas_user'@'%' IDENTIFIED BY 'adidas_password';
-GRANT ALL PRIVILEGES ON subscription_db.* TO 'adidas_user'@'%' IDENTIFIED BY 'adidas_password';
-
 USE subscription_db;
 
 CREATE TABLE IF NOT EXISTS subscription (

@@ -61,7 +61,7 @@ public class SubscriptionController {
 		SubscriptionDTO subscriptionCreated = subscriptionService.create(subscription);
 		log.info("Response {}", subscriptionCreated);
 		//Call to events service
-		//callEvents(subscriptionCreated);
+		callEvents(subscriptionCreated);
 		return new ResponseEntity<SubscriptionDTO>(subscriptionCreated, HttpStatus.CREATED);
 	}
 
