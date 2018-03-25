@@ -1,8 +1,8 @@
-package com.aandres.subscriptionservice.register.model.dto;
+package com.aandres.eventservice.register.model.dto;
 
 import java.util.Date;
 
-import com.aandres.subscriptionservice.common.constant.Constant;
+import com.aandres.eventservice.common.constant.Constant;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class SubscriptionDTO {

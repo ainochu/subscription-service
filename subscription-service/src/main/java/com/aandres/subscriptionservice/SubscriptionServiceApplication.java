@@ -11,8 +11,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import com.aandres.subscription.controller.SubscriptionController;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.aandres.subscription.controller", "com.aandres.subscription.service","com.aandres.subscription.swagger.configuration"})
-@EntityScan("com.aandres.subscriptionservice.subscription.model")
+@ComponentScan(basePackages = {"com.aandres.subscription.controller","com.aandres.subscription.service","com.aandres.subscription.swagger.configuration"})
+@EntityScan({"com.aandres.subscriptionservice.subscription.model"})
 @EnableJpaRepositories("com.aandres.subscription.repository")
 @ComponentScan(basePackageClasses=SubscriptionController.class)
 public class SubscriptionServiceApplication {

@@ -43,12 +43,7 @@ public class SubscriptionController {
 	
 	@Autowired
 	public SubscriptionService subscriptionService;
-	
-	@Value("${eventservice.url}")
-	private String eventServiceUrl;
 
-	@Value("${emailservice.url}")
-	private String emailServiceUrl;
 	
 	private static final Logger log = LoggerFactory.getLogger(SubscriptionController.class);
 	
@@ -59,35 +54,18 @@ public class SubscriptionController {
 		log.info("subscription: {}", subscription);
 		SubscriptionDTO subscriptionCreated = subscriptionService.create(subscription);
 		log.info("Response {}", subscriptionCreated);
-		//Call to events service
-		callEvents(subscriptionCreated);
-		return new ResponseEntity<SubscriptionDTO>(subscriptionCreated, HttpStatus.CREATED);
-	}
-
-	private void callEvents(SubscriptionDTO subscriptionCreated) throws SubscriptionException{
-	    HttpEntity<SubscriptionDTO> request = new HttpEntity<SubscriptionDTO>(subscriptionCreated);
-	    RestTemplate restTemplate = new RestTemplate();
-	    log.info("Calling event service with url "+ emailServiceUrl);
-	    try {
-	    	restTemplate.exchange(eventServiceUrl, HttpMethod.POST,request, String.class);
-	    }catch(Exception e) {
-	    	throw new SubscriptionException(ResponseCode.SERVICE_EVENT_EXCEPTION);
-	    }
-	    log.info("Calling email service with url "+ emailServiceUrl);
-	    try {
-	    	restTemplate.exchange(emailServiceUrl, HttpMethod.POST,request, String.class);
-	    }catch(Exception e) {
-	    	throw new SubscriptionException(ResponseCode.SERVICE_EMAIL_EXCEPTION);
-	    }
+		return new ResponseEntity<>(subscriptionCreated, HttpStatus.CREATED);
 	}
 	
 	@ExceptionHandler({SubscriptionException.class})
+	@ResponseStatus(value = HttpStatus.BAD_REQUEST)
     public ErrorResultDTO handleRegisterException(HttpServletRequest req, Exception e) {
 		SubscriptionException exception = (SubscriptionException) e;
 		return exception.getErrorResultDTO();
     }
 	
 	@ExceptionHandler({MethodArgumentNotValidException.class})
+	@ResponseStatus(value = HttpStatus.BAD_REQUEST)
     public ErrorResultDTO handleValidatorException(HttpServletRequest req, Exception e) {
 		MethodArgumentNotValidException exception = (MethodArgumentNotValidException) e;
 		return new ErrorResultDTO(exception.getMessage());

@@ -1,4 +1,4 @@
-package com.aandres.subscriptionservice.common.constant;
+package com.aandres.eventservice.common.constant;
 
 
 public class Constant {

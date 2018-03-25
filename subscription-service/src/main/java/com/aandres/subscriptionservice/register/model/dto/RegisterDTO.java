@@ -61,7 +61,7 @@ public class RegisterDTO {
 	}
 	@Override
 	public String toString() {
-		return "RegisterDTO [email=" + email + ", firstName=" + firstName + ", gender=" + gender + ", dateOfBith="
+		return "RegisterDTO [email=" + email + ", firstName=" + firstName + ", gender=" + gender + ", dateOfBirth="
 				+ dateOfBirth + ", agree=" + agree + "]";
 	}
 	

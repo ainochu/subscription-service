@@ -32,7 +32,7 @@ public class Subscription {
 	@Enumerated(EnumType.STRING)
 	private Gender gender;
 	@Column(name = "date_of_birthday", nullable = false)
-	private Date dateOfBith;
+	private Date dateOfBirth;
 	@Column(name = "agree", nullable = false)
 	private boolean agree;
 	@Column(name = "campaign_id", nullable = false)
@@ -62,11 +62,11 @@ public class Subscription {
 	public void setGender(Gender gender) {
 		this.gender = gender;
 	}
-	public Date getDateOfBith() {
-		return dateOfBith;
+	public Date getDateOfBirth() {
+		return dateOfBirth;
 	}
-	public void setDateOfBith(Date dateOfBith) {
-		this.dateOfBith = dateOfBith;
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 	public boolean isAgree() {
 		return agree;
@@ -83,7 +83,7 @@ public class Subscription {
 	@Override
 	public String toString() {
 		return "SubscriptionDTO [newsletterId=" + newsletterId + ", email=" + email + ", firstName=" + firstName
-				+ ", gender=" + gender + ", dateOfBith=" + dateOfBith + ", agree=" + agree + ", campaignId="
+				+ ", gender=" + gender + ", dateOfBith=" + dateOfBirth + ", agree=" + agree + ", campaignId="
 				+ campaignId + "]";
 	}
 	
