@@ -19,9 +19,9 @@ This will generate a .jar file inside /target directory.
 
 
 # Dockerizing
-    docker-compose up
+    docker-compose up --build
 
-Docker is another powerful tool for developing and delivering. For this project a simple docker image is built from nginx so as to serve the web application.
+Docker is another powerful tool for developing and delivering.
 
 After running the commands above you can browse http://localhost:8080/ to see it working.
 
