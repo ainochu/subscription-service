@@ -1,6 +1,6 @@
 # Subscription-service
 
-This is a demo project of a RESTful service subscription application. This application is writting in Java 1.8.
+This is a demo project of a RESTful service subscription application. This application is written in Java 1.8.
 It is composed of four microservices:
   - Subscription-service: is the main rest service of the application. In this part, the current user register inside application.
   - Event-service/Email-service: receives the data of the registry and return a OK request.
@@ -19,7 +19,7 @@ This will generate a .jar file inside /target directory.
 
 
 # Dockerizing
-docker compose-up
+docker-compose up
 
 Docker is another powerful tool for developing and delivering. For this project a simple docker image is built from nginx so as to serve the web application.
 
@@ -29,7 +29,7 @@ After running the commands above you can browse http://localhost:8080/ to see it
 
 # Dependencies
 
-### Spring Framework Boot
+### Spring Boot Framework
 It's basically a suite, pre-configured, pre-sugared set of frameworks/technologies to reduce boiler plate configuration providing you the shortest way to have a Spring web application up and running with smallest line of code/configuration out-of-the-box. 
 Used for create a simple RESTful application up and running with almost zero configuration. 
 http://projects.spring.io/spring-boot/
