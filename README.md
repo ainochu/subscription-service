@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/ainochu/subscription-service.png?branch=master)](https://travis-ci.org/ainochu/subscription-service)
+
+
 # Subscription-service
 
 This is a demo project of a RESTful service subscription application. This application is written in Java 1.8.
