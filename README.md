@@ -5,10 +5,7 @@ It is composed of four microservices:
   - Subscription-service: is the main rest service of the application. In this part, the current user register inside application.
   - Event-service/Email-service: receives the data of the registry and return a OK request.
   - Subscription-database: contain the schema of the application.
-You can:
-  - Use NLP services from different external services
-  - Configure your elastic server to insert the obtained results
-  - Export results in json format.
+
 # Requirements
  -  Java <= 8
  - Apache Maven <= 3.5.2
