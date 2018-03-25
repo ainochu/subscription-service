@@ -1,9 +1,5 @@
 package com.aandres.subscription.service;
 
-import javax.persistence.MappedSuperclass;
-
-import org.mapstruct.Mapper;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
 import com.aandres.subscriptionservice.register.model.dto.RegisterDTO;

@@ -1,6 +1,4 @@
 package com.aandres.subscription.service;
-import org.mapstruct.Mapper;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
 import com.aandres.subscriptionservice.subscription.model.Subscription;

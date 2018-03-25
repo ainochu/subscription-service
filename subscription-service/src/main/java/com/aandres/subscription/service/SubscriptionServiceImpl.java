@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
@@ -45,7 +44,9 @@ public class SubscriptionServiceImpl implements SubscriptionService {
 		if ((subscriptionRepository.findByEmail(subscriptionNew.getEmail()) != null)){
 			throw new SubscriptionException(ResponseCode.EMAIL_EXISTS);
 		}
-		subscriptionNew.setCampaignId(1L);
+		if(!subscriptionNew.isAgree()) {
+			throw new SubscriptionException(ResponseCode.SUBSCRIPTION_AGREE_EXCEPTION);
+		}
 		//Call to events service
 		callEvents(subscriptionDTOMapper.map(subscription, SubscriptionDTO.class));
 		subscriptionNew = subscriptionRepository.save(subscriptionNew);

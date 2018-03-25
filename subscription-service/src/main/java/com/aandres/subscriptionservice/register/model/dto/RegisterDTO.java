@@ -28,6 +28,9 @@ public class RegisterDTO {
 	@NotNull
 	@ApiModelProperty(notes = "Consent user", required =true)
 	private boolean agree;
+	@NotNull
+	@ApiModelProperty(notes = "Id campaign", required =true)
+	private long campaignId;
 	
 	public String getEmail() {
 		return email;
@@ -59,11 +62,18 @@ public class RegisterDTO {
 	public void setAgree(boolean agree) {
 		this.agree = agree;
 	}
+	public long getCampaignId() {
+		return campaignId;
+	}
+	public void setCampaignId(long campaignId) {
+		this.campaignId = campaignId;
+	}
 	@Override
 	public String toString() {
 		return "RegisterDTO [email=" + email + ", firstName=" + firstName + ", gender=" + gender + ", dateOfBirth="
-				+ dateOfBirth + ", agree=" + agree + "]";
+				+ dateOfBirth + ", agree=" + agree + ", campaignId=" + campaignId + "]";
 	}
+	
 	
 	
 	
