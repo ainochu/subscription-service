@@ -19,7 +19,7 @@ public class SubscriptionDTO {
 	private Gender gender;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = Constant.FORMAT_TIMEZONE)
 	@NotNull
-	private Date dateOfBith;
+	private Date dateOfBirth;
 	private boolean agree;
 	private Long campaignId;
 	
@@ -47,11 +47,11 @@ public class SubscriptionDTO {
 	public void setGender(Gender gender) {
 		this.gender = gender;
 	}
-	public Date getDateOfBith() {
-		return dateOfBith;
+	public Date getDateOfBirth() {
+		return dateOfBirth;
 	}
-	public void setDateOfBith(Date dateOfBith) {
-		this.dateOfBith = dateOfBith;
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 	public boolean isAgree() {
 		return agree;
@@ -68,7 +68,7 @@ public class SubscriptionDTO {
 	@Override
 	public String toString() {
 		return "SubscriptionDTO [newsletterId=" + newsletterId + ", email=" + email + ", firstName=" + firstName
-				+ ", gender=" + gender + ", dateOfBith=" + dateOfBith + ", agree=" + agree + ", campaignId="
+				+ ", gender=" + gender + ", dateOfBith=" + dateOfBirth + ", agree=" + agree + ", campaignId="
 				+ campaignId + "]";
 	}
 	

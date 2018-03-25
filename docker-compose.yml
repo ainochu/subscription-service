@@ -8,8 +8,6 @@ services:
     - subscription-database
     - event-service
     - email-service
-    # depends_on:
-    # - subscription-database
   event-service:
     build: ./event-service
     ports:

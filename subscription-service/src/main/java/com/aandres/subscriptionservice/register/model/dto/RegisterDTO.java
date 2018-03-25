@@ -24,7 +24,7 @@ public class RegisterDTO {
 	@NotNull
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = Constant.FORMAT_TIMEZONE)
 	@ApiModelProperty(notes = "User birthday", required =true)
-	private Date dateOfBith;
+	private Date dateOfBirth;
 	@NotNull
 	@ApiModelProperty(notes = "Consent user", required =true)
 	private boolean agree;
@@ -47,11 +47,11 @@ public class RegisterDTO {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public Date getDateOfBith() {
-		return dateOfBith;
+	public Date getDateOfBirth() {
+		return dateOfBirth;
 	}
-	public void setDateOfBith(Date dateOfBith) {
-		this.dateOfBith = dateOfBith;
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 	public boolean isAgree() {
 		return agree;
@@ -62,7 +62,7 @@ public class RegisterDTO {
 	@Override
 	public String toString() {
 		return "RegisterDTO [email=" + email + ", firstName=" + firstName + ", gender=" + gender + ", dateOfBith="
-				+ dateOfBith + ", agree=" + agree + "]";
+				+ dateOfBirth + ", agree=" + agree + "]";
 	}
 	
 	

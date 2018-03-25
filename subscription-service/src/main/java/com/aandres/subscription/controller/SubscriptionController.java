@@ -9,7 +9,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -68,16 +67,17 @@ public class SubscriptionController {
 	private void callEvents(SubscriptionDTO subscriptionCreated) throws SubscriptionException{
 	    HttpEntity<SubscriptionDTO> request = new HttpEntity<SubscriptionDTO>(subscriptionCreated);
 	    RestTemplate restTemplate = new RestTemplate();
+	    log.info("Calling event service with url "+ emailServiceUrl);
 	    try {
 	    	restTemplate.exchange(eventServiceUrl, HttpMethod.POST,request, String.class);
 	    }catch(Exception e) {
 	    	throw new SubscriptionException(ResponseCode.SERVICE_EVENT_EXCEPTION);
 	    }
-	    log.info("Calling email service with url ", emailServiceUrl);
+	    log.info("Calling email service with url "+ emailServiceUrl);
 	    try {
 	    	restTemplate.exchange(emailServiceUrl, HttpMethod.POST,request, String.class);
 	    }catch(Exception e) {
-	    	throw new SubscriptionException(ResponseCode.SERVICE_EVENT_EXCEPTION);
+	    	throw new SubscriptionException(ResponseCode.SERVICE_EMAIL_EXCEPTION);
 	    }
 	}
 	
