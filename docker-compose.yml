@@ -1,0 +1,14 @@
+version: '3'
+services:
+  subscription-service:
+    build: ./subscription-service
+    ports:
+    - "8080:8080"
+    links:
+    - subscription-database
+    depends_on:
+    - subscription-database
+  subscription-database:
+    build: ./subscription-database
+    ports:
+    - "3306:3306"
