@@ -5,5 +5,5 @@ cache:
   directories:
   - $HOME/.m2
 script:
-  - ./mvnw clean package
+  - mvn -f ./subscription-service/pom.xml clean package
   - bash <(curl -s https://codecov.io/bash)
